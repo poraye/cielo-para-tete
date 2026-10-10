@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para mi Tete del cielo ✨</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Fondo -->
+  <canvas id="starsBg"></canvas>
+
+  <main class="wrap">
+    <section class="card">
+      <header class="cover-heading">
+        <p class="cover-date" id="currentDate"></p>
+        <h1 class="title">Un universo para ti <span>✨</span></h1>
+        <p class="subtitle">Hay millones de cuerpos celestes, pero solo uno lleva tu nombre.</p>
+      </header>
+
+      <figure class="asteroid-visual">
+        <img src="./222Lucia.png" alt="Ilustración de tres formas del asteroide (222) Lucia" />
+        <figcaption>Una pequeña maravilla entre Marte y Júpiter</figcaption>
+      </figure>
+
+      <section class="asteroid-details" aria-labelledby="asteroidTitle">
+        <p class="eyebrow">Descubre tu asteroide</p>
+        <h2 id="asteroidTitle">(222) Lucia</h2>
+        <p class="asteroid-description">
+          Un pequeño mundo que viaja por el cinturón principal, mucho antes de que comenzara nuestra historia.
+        </p>
+        <div class="facts">
+          <div class="fact"><strong>1882</strong><span>Descubierto</span></div>
+          <div class="fact"><strong>5.57 años</strong><span>Período orbital aprox.</span></div>
+          <div class="fact"><strong>Marte – Júpiter</strong><span>Cinturón principal</span></div>
+        </div>
+      </section>
+
+      <section class="anniversary" aria-live="polite">
+        <p class="anniversary-label">Nuestra historia</p>
+        <h2 id="milestone">4 años · 1 mes</h2>
+        <p>Desde el 10 de agosto de 2022</p>
+        <p class="next-anniversary" id="nextAnniversary"></p>
+        <div class="counter" id="counter"></div>
+      </section>
+
+      <section class="message-section" aria-label="Mensaje para Tete">
+        <button id="toggleMsg" class="message-card" aria-expanded="false" aria-controls="loveMsg">
+          <span class="message-card-icon" aria-hidden="true">💌</span>
+          <span>
+            <strong id="messageCardTitle">Un mensaje para Tete</strong>
+            <small id="messageCardHint">Toca aquí para descubrirlo</small>
+          </span>
+          <span class="message-card-arrow" aria-hidden="true">♡</span>
+        </button>
+        <p id="loveMsg" class="love-msg" hidden>
+          No necesito recorrer todo el universo para encontrar algo extraordinario. Desde el 10 de agosto,
+          hemos construido nuestra propia historia, y todavía nos quedan muchos recuerdos por crear.
+          <span class="message-signoff">Con cariño, para ti ♡</span>
+        </p>
+      </section>
+
+      <button id="openSolar" class="explore-button">Explorar el sistema solar 🪐</button>
+      <p class="cover-footnote">Las órbitas y la imagen de Lucia son ilustrativas, no representan posiciones ni detalles astronómicos exactos.</p>
+    </section>
+  </main>
+
+  <!-- Modal sistema solar -->
+  <div id="solarModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeSolar" class="close-btn" aria-label="Cerrar">✕</button>
+      <canvas id="solarCanvas"></canvas>
+      <p class="simulation-note">Órbitas y posiciones ilustrativas; no representan ubicaciones astronómicas reales.</p>
+      <div class="planet-legend" aria-label="Leyenda de cuerpos celestes">
+        <span><i class="mercury-dot"></i>Mercurio</span>
+        <span><i class="venus-dot"></i>Venus</span>
+        <span><i class="earth-dot"></i>Tierra</span>
+        <span><i class="moon-dot"></i>Luna</span>
+        <span><i class="mars-dot"></i>Marte</span>
+        <span><i class="jupiter-dot"></i>Júpiter</span>
+        <span><i class="saturn-dot"></i>Saturno</span>
+        <span><i class="lucia-dot"></i>(222) Lucia</span>
+      </div>
+
+      <div class="controls">
+        <button id="toggleRun">Pausar ⏸️</button>
+        <button id="speedDown">- Velocidad</button>
+        <button id="speedUp">+ Velocidad</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

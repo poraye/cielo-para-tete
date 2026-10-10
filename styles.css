@@ -1,0 +1,372 @@
+:root{
+  --bg1:#040614;
+  --bg2:#0a1030;
+  --text:#ecf2ff;
+  --line:rgba(173,196,255,.35);
+  --card:rgba(12,18,44,.58);
+  --accent1:#9db8ff;
+  --accent2:#ff9ecf;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  min-height:100vh;
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  background:radial-gradient(ellipse at bottom,var(--bg2),var(--bg1));
+  overflow-x:hidden;
+}
+
+#starsBg{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.wrap{
+  position:relative;
+  z-index:1;
+  min-height:100vh;
+  padding:clamp(16px,4vh,36px) 14px;
+}
+
+.card{
+  width:min(760px,100%);
+  margin:0 auto;
+  background:rgba(12,18,44,.78);
+  border:1px solid var(--line);
+  border-radius:20px;
+  backdrop-filter: blur(8px);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  padding:clamp(14px,3vw,24px);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.cover-heading{text-align:center}
+.cover-date{
+  margin:0 0 6px;
+  color:#ffd2e9;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.title{
+  margin:0;
+  font-size:clamp(1.65rem,5vw,2.35rem);
+}
+.title span{color:#ffd2e9}
+.subtitle{
+  margin:6px 0 0;
+  line-height:1.5;
+  opacity:.86;
+  font-size:.95rem;
+}
+
+.asteroid-visual{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:clamp(150px,34vw,290px);
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(173,196,255,.35);
+  border-radius:14px;
+  background:#070a20;
+}
+.asteroid-visual::before{
+  position:absolute;
+  inset:0;
+  content:"";
+  opacity:.45;
+  background-image:
+    radial-gradient(1px 1px at 12% 25%,#fff 99%,transparent),
+    radial-gradient(1px 1px at 77% 18%,#fff 99%,transparent),
+    radial-gradient(1px 1px at 88% 72%,#fff 99%,transparent),
+    radial-gradient(1px 1px at 23% 81%,#fff 99%,transparent),
+    radial-gradient(1px 1px at 63% 88%,#fff 99%,transparent);
+}
+.asteroid-visual img{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:min(90%,520px);
+  max-height:clamp(115px,25vw,220px);
+  object-fit:contain;
+  mix-blend-mode:screen;
+  filter:drop-shadow(0 0 22px rgba(255,111,196,.42));
+}
+.asteroid-visual figcaption{
+  position:absolute;
+  right:10px;
+  bottom:8px;
+  left:10px;
+  z-index:1;
+  color:rgba(236,242,255,.76);
+  text-align:center;
+  font-size:.72rem;
+}
+.asteroid-details{text-align:center}
+.eyebrow,.anniversary-label{
+  margin:0;
+  color:#ffd2e9;
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.asteroid-details h2{
+  margin:3px 0;
+  font-size:1.4rem;
+}
+.asteroid-description{
+  max-width:600px;
+  margin:0 auto 12px;
+  font-size:.88rem;
+  line-height:1.5;
+  opacity:.86;
+}
+.facts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.fact{
+  display:flex;
+  min-height:58px;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px;
+  background:rgba(255,255,255,.03);
+  text-align:center;
+}
+.fact strong{color:#ecf2ff;font-size:.9rem}
+.fact span{font-size:.68rem;opacity:.76}
+
+.anniversary{
+  padding:16px;
+  text-align:center;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.anniversary p{margin:0;line-height:1.5}
+.anniversary h2{
+  margin:4px 0 2px;
+  font-size:clamp(1.8rem,5vw,2.45rem);
+}
+.next-anniversary{
+  margin-top:2px!important;
+  font-size:.82rem;
+  opacity:.76;
+}
+.counter{
+  margin:7px 0 0;
+  font-size:.78rem;
+  opacity:.8;
+}
+.message-section{display:grid;gap:0}
+button{
+  border:none;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:700;
+  cursor:pointer;
+  color:#0a122d;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  box-shadow:0 8px 24px rgba(128,161,255,.35);
+}
+button:hover{transform:translateY(-1px)}
+.message-card,.explore-button{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 15px;
+  border:1px solid rgba(255,158,207,.55);
+  border-radius:12px;
+  color:var(--text);
+  text-align:left;
+  background:linear-gradient(120deg,rgba(255,158,207,.16),rgba(157,184,255,.13));
+  box-shadow:0 8px 24px rgba(255,158,207,.12);
+}
+.message-card-icon{font-size:1.5rem}
+.message-card strong,.message-card small{display:block}
+.message-card small{margin-top:3px;font-weight:400;opacity:.8}
+.message-card-arrow{margin-left:auto;color:#ffd2e9}
+.message-card[aria-expanded="true"] .message-card-arrow{transform:rotate(45deg)}
+.message-card:focus-visible,.explore-button:focus-visible{
+  outline:2px solid #ffd2e9;
+  outline-offset:3px;
+}
+.message-card{
+  cursor:pointer;
+}
+.explore-button{
+  justify-content:center;
+  border:0;
+  color:#0a122d;
+  text-align:center;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  cursor:pointer;
+}
+.love-msg{
+  margin:10px 0 0;
+  padding:12px;
+  border:1px solid rgba(255,158,207,.35);
+  border-radius:10px;
+  background:rgba(255,158,207,.08);
+  line-height:1.5;
+  font-size:.88rem;
+  animation:reveal-message .35s ease both;
+}
+.love-msg[hidden]{display:none}
+.message-signoff{display:block;margin-top:8px;text-align:right;color:#ffd2e9}
+@keyframes reveal-message{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.cover-footnote{
+  margin:-8px 0 0;
+  color:rgba(236,242,255,.62);
+  text-align:center;
+  font-size:.68rem;
+}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(3,6,18,.78);
+  backdrop-filter:blur(4px);
+  z-index:9999;
+}
+.modal.show{display:flex}
+
+.modal-content{
+  width:min(1100px,96vw);
+  height:min(760px,92vh);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  background:radial-gradient(ellipse at bottom,#0a1030,#040614);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+#solarCanvas{
+  width:100%;
+  height:calc(100% - 100px);
+  display:block;
+}
+
+.simulation-note{
+  position:absolute;
+  top:14px;
+  left:16px;
+  max-width:calc(100% - 90px);
+  margin:0;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:rgba(4,6,20,.72);
+  color:rgba(236,242,255,.85);
+  font-size:.78rem;
+  line-height:1.4;
+}
+
+.planet-legend{
+  position:absolute;
+  right:12px;
+  bottom:58px;
+  left:12px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:5px 12px;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(4,6,20,.78);
+  font-size:.75rem;
+}
+.planet-legend span{white-space:nowrap}
+.planet-legend i{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  margin-right:5px;
+  border-radius:50%;
+  background:var(--dot-color);
+  box-shadow:0 0 7px var(--dot-color);
+}
+.mercury-dot{--dot-color:#b9a38d}
+.venus-dot{--dot-color:#e8c27a}
+.earth-dot{--dot-color:#4ea1ff}
+.moon-dot{--dot-color:#e9eefc}
+.mars-dot{--dot-color:#e6785b}
+.jupiter-dot{--dot-color:#d9b188}
+.saturn-dot{--dot-color:#e5d0a0}
+.uranus-dot{--dot-color:#8edce0}
+.neptune-dot{--dot-color:#5476e8}
+.lucia-dot{--dot-color:#ff9ecf}
+
+.close-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  z-index:3;
+  border:none;
+  border-radius:10px;
+  padding:6px 10px;
+  cursor:pointer;
+  font-weight:700;
+  background:#ffffff;
+}
+
+.controls{
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+  z-index:3;
+  max-width:calc(100% - 20px);
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+@media (max-width:520px){
+  .card{gap:14px}
+  .facts{gap:5px}
+  .fact{padding:6px 4px}
+  .fact strong{font-size:.76rem}
+  .fact span{font-size:.61rem}
+  #solarCanvas{height:calc(100% - 132px)}
+  .planet-legend{
+    right:8px;
+    bottom:88px;
+    left:8px;
+    gap:4px 8px;
+    padding:6px;
+    font-size:.68rem;
+  }
+  .controls{bottom:10px;gap:6px}
+  .controls button{padding:8px 10px;font-size:.8rem}
+  .simulation-note{top:58px;left:10px;font-size:.7rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
